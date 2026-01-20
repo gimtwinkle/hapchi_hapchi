@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import BungCreateModal from "../features/bung/components/BungCreateModal";
 import BungCalendar from "../features/bung/calendar/BungCalendar";
+import BungModal from "../features/bung/components/BungModal";
 
 export default function BungCalendarPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -13,7 +13,7 @@ export default function BungCalendarPage() {
   return (
     <>
       <BungCalendar onDateClick={openCreate} />
-      <BungCreateModal date={selectedDate} onClose={closeCreate} />
+      <BungModal date={selectedDate} onClose={closeCreate} mode={"create"} />
     </>
   );
 }
